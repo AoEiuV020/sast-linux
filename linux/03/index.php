@@ -34,9 +34,19 @@ if(file_exists($info_txt))
 			$img->setAttribute("src",substr($content,4));
 			$p->appendChild($img);
 			break;
+		case "lin:"://link...
+			$a = $doc->createElement('a');
+			$content=str_replace(array("\n","\r"),"",$content);
+			$a->setAttribute("href",substr($content,4));
+			$text = $doc->createTextNode(fgets($fpinfo));
+			$a ->appendChild($text);
+			$p->appendChild($a);
+			break;
 		default:
 			$span = $doc->createElement('span');
-			$span->nodeValue=$content;
+			$text = $doc->createTextNode($content);
+			$span ->appendChild($text);
+			//$span ->nodeValue=htmlspecialchars($content);
 			$p->appendChild($span);
 		}
 		$br = $doc->createElement('br');
@@ -48,7 +58,7 @@ $body->appendChild($p);
 
 $p = $doc->createElement('p');
 $dir = opendir('.');
-$exclude = array(".","img",basename(__FILE__),"info.txt","link.txt","about.txt","logreport");
+$exclude = array(".",".git","README.md","img","res",basename(__FILE__),"info.txt","link.txt","about.txt","logreport");
 while(($file=readdir($dir))!==false)
 {
 	$flag=false;
@@ -71,6 +81,10 @@ foreach($files as $file)
 	$a = $doc->createElement('a');
 	$a -> setAttribute('href',$file);
 	$info = $file;
+	if($file==="..")
+	{
+		$info="返回上级";
+	}
 	if(is_dir($file))
 	{
 		$info_txt=$file."/info.txt";
@@ -105,10 +119,11 @@ if(file_exists($link_txt))
 	while(!feof($fplink))
 	{
 		$a = $doc->createElement('a');
-		list($href,$info)=fscanf($fplink,"%s%s");
+		list($href,$link)=fscanf($fplink,"%s%s");
 		$a -> setAttribute('href',$href);
 		$a -> setAttribute('target',"_blank");
-		$a->nodeValue=$info;
+		$text = $doc->createTextNode($link);
+		$a ->appendChild($text);
 		$p->appendChild($a);
 		$br = $doc->createElement('br');
 		$p->appendChild($br);
