@@ -1,0 +1,21 @@
+实验楼 - 第一家以实验为核心的IT在线教育平台
+试试看吧，据说是第一家这样的网站，
+在线学习还提供云主机供学习者使用，
+这和我在SSH页面提供VPS帐号的目的是一样的，
+就是要在学习的时候有个实践的环境，
+
+实验楼提供的Linux也是VNC控制的，
+也就是传输的是图像，
+这样对网络占用比较大，
+而且好像不大好用，
+我自己用了几次，一会儿就掉线，
+也许是我的网络问题，
+
+反正个人还是建议通过SSH控制，
+lin:../../01
+SSH
+img:img/shiyanlou1.png
+img:img/shiyanlou2.png
+img:img/shiyanlou3.png
+img:img/shiyanlou4.png
+img:img/shiyanlou5.png
