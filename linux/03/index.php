@@ -57,6 +57,20 @@ if(file_exists($info_txt))
 $body->appendChild($p);
 
 $p = $doc->createElement('p');
+/*
+ * 返回根目录的a标签，
+ */
+$a = $doc->createElement('a');
+$a -> setAttribute('href',"/");
+$text = $doc->createTextNode("返回根目录");
+$a -> appendChild($text);
+$p -> appendChild($a);
+$br = $doc->createElement('br');
+$p -> appendChild($br);
+/*
+ * 扫描当前目录，用a标签链接出每个文件夹，
+ * 读出每个目录里的info.txt里的第一行作为a标签的value，
+ */
 $dir = opendir('.');
 $exclude = array(".",".git","README.md","img","res",basename(__FILE__),"info.txt","link.txt","about.txt","logreport");
 while(($file=readdir($dir))!==false)
@@ -111,7 +125,7 @@ $link_txt="link.txt";
 if(file_exists($link_txt))
 {
 	$span = $doc->createElement('span');
-	$span->nodeValue="下面是些别处引用的链接，";
+	$span->nodeValue="下面是些外部链接，";
 	$p->appendChild($span);
 	$br = $doc->createElement('br');
 	$p->appendChild($br);

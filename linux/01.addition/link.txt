@@ -1,0 +1,8 @@
+http://baike.baidu.com/view/263416.htm 度娘百科-字符
+http://baike.baidu.com/view/15482.htm 度娘百科-ASCII
+http://baike.baidu.com/subview/370184/5079665.htm 度娘百科-ls
+http://baike.baidu.com/subview/22623/5117769.htm 度娘百科-cd
+http://baike.baidu.com/subview/17861/5037753.htm 度娘百科-mv
+http://baike.baidu.com/subview/6779/5039895.htm 度娘百科-rm
+http://baike.baidu.com/item/man/16217242 度娘百科-man
+
