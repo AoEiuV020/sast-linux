@@ -1,0 +1,4 @@
+http://baike.baidu.com/item/shell/99702 度娘百科-shell
+http://baike.baidu.com/view/350931.htm 度娘百科-bash
+http://baike.baidu.com/view/2096726.htm 度娘百科-csh
+http://baike.baidu.com/view/4482430.htm 度娘百科-zsh
