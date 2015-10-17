@@ -26,18 +26,25 @@ if(file_exists($info_txt))
 	while(!feof($fpinfo))
 	{
 		$content=fgets($fpinfo);
+		$content=str_replace(array("\n","\r"),"",$content);
 		switch(substr($content,0,4))
 		{
 		case "img:":
 			$img = $doc->createElement('img');
-			$content=str_replace(array("\n","\r"),"",$content);
 			$img->setAttribute("src",substr($content,4));
 			$p->appendChild($img);
 			break;
 		case "lin:"://link...
 			$a = $doc->createElement('a');
-			$content=str_replace(array("\n","\r"),"",$content);
 			$a->setAttribute("href",substr($content,4));
+			$text = $doc->createTextNode(fgets($fpinfo));
+			$a ->appendChild($text);
+			$p->appendChild($a);
+			break;
+		case "eli:"://external link...
+			$a = $doc->createElement('a');
+			$a->setAttribute("href",substr($content,4));
+			$a->setAttribute('target',"_blank");
 			$text = $doc->createTextNode(fgets($fpinfo));
 			$a ->appendChild($text);
 			$p->appendChild($a);
