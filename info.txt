@@ -14,6 +14,6 @@ lin:/linux/01
 这有个手册，虽然里面的命令不怎么全，
 但胜在全中文，
 但还是建议多用man命令看帮助，
-lin:res/menual.chm
+lin:res/men.chm
 Linux命令速查手册
 
