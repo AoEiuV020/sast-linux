@@ -1,71 +1,32 @@
-在Windows上看
+BIOS+MBR：
+eli:http://baike.baidu.com/view/361.htm
+度娘百科之BIOS
+img:img/bios.jpg
 
-首先通过“我的电脑”右键属性，
-看看自己的“系统类型”
-现在的电脑的cpu基本都是支持x64的了，
-img:img/attribute1.png
-img:img/attribute2.png
 
-如果有老电脑不支持64位，那么就不能安装64位的windows，同样不能安装64位的Linux，
-所以如果要安装Linux，那么下载Linux系统镜像时就要注意下载的是64位还是32位，
-通常，下载的iso镜像文件名都能体现这一点，
-比如64位通常写有类似于"x86_64","64-bit","amd64",
-32位的通常写有"x86","32-bit","i386","i486","i586","i686",
-总之很好区分，但不能忽略，
-img:img/mint1.png
-img:img/arch1.png
-img:img/kali1.png
+eli:http://baike.baidu.com/subview/9485/9079238.htm#viewPageContent
+度娘百科之MBR
+MBR:	Master Boot Record
+  2011年以前的PC系统都采用传统的PC BIOS，这种BIOS的特点是使用主引导记录（MBR）。MBR分区定义每个扇区512字节，磁盘寻址32位地址，所能访问的磁盘容量最大是2.19TB（232 * 512byte）。Windows从MBR启动，因此每个MBR都限制在2.19TB。
+img:img/mbr1.png
 
---------分割线--------
-然后是分区表有关的，
-这里用的是Diskgenius，
-eli:http://pan.baidu.com/s/1i3fdxXz
-Diskgenius下载
-用这软件能看到硬盘详细的信息，
-点一下硬盘就能看到右边的分区表类型，
-我的是GPT，还有种常见的是MBR，
-img:img/diskgenius1.png
-分区表类型是和启动方式相关的，
-BIOS引导只能用于MBR分区表，
-EFI引导只能用于GPT分区表，
 
-如果主板不支持EFI，那么自然只能用BIOS+MBR，
-如果主板支持EFI，开机选引导时就要注意，到底是哪种引导，
-img:img/boot1.png
-要是用BIOS引导安装系统在GPT分区表的硬盘上，或EFI引导的在MBR分区表上安装系统，
-都会出现无法预料的问题，
-img:img/efi1.jpg
 
---------分割线--------
-文件系统，
-还是Diskgenius，中间一列就是每个分区的文件系统，
-img:img/diskgenius2.png
-常见的文件系统有，
-FAT,NTFS,exFAT,EXT
-前三者都是微软发明的，EXT是为Linux发明的，
+MBR：可以安装启动管理程序的地方，有446 bytes；分割表(partition table)记录整颗硬盘分割的状态，有64 bytes，其实所谓的分割只是针对那个64 bytes的分割表进行配置，硬盘默认的分割表仅能写入四组分割资讯，这四组分割资讯我们称为主要(Primary)或延伸(Extended)分割槽
+img:img/mbr2.png
 
-FAT系列以FAT32为例，FAT32无法存放单个文件大于4G的，后三者都可以，
-而且FAT性能不行，所以已经基本被NTFS取代，
+如上图右下方那个区块有继续分割出五个分割槽， 这五个由扩展分配继续切出来的分割槽，就被称为逻辑分割槽(logical partition)
+简单的说，整个启动流程到操作系统之前的动作是这样的：
+1.BIOS：启动主动运行的韧体，会认识第一个可启动的装置；
+2.MBR：第一个可启动装置的第一个磁区内的主要启动记录区块，内含启动管理程序；
+3.启动管理程序(boot loader)：一支可读取核心文件来运行的软件；
+4.核心文件：开始操作系统的功能...
+而boot loader的主要任务有：
+提供菜单：使用者可以选择不同的启动项目，这也是多重启动的重要功能
+加载核心文件：直接指向可启动的程序区段来开始操作系统
+转交其他loader：将启动管理功能转交给其他loader负责
 
-但是上图可以看出，我的电脑上有个FAT16的，这是因为EFI只能从FAT加载启动项，
-至于exFAT，这通常是u盘用的，
-因为NTFS会详细记录读写操作，所以要更频繁的读写，
-对于u盘来说，频繁的读写是很伤芯片的，
-但是FAT32又不能放大于4G的单个文件，
-所以有了exFAT，专门给u盘使用，
+img:img/mbr3.png
+在上图可以发现，MBR的启动管理程序提供两个菜单，菜单一(M1)可以直接加载Windows的核心文件来启动；菜单二(M2)则是将启动管理工作交给第二个分割槽的启动磁区(boot sector)。当使用者在启动的时候选择菜单二时， 那么整个启动管理工作就会交给第二分割槽的启动管理程序了。 当第二个启动管理程序启动后，该启动管理程序内(上图中)仅有一个启动菜单，因此就能够使用Linux的核心文件来启动
 
-EXT系列的是Linux上最常用的，想在windows上读写不容易，
-最新的EXT是EXT4，但是我至今没找到能在windows上读EXT4的软件，
-而Diskgenius就可以读EXT3，
-所以我一般就是用EXT3安装Linux，
-
-而前三者对于Linux来说，
-FAT32也是普遍支持的文件系统，但是在Linux上通常称为VFAT，
-NTFS，Linux内核不支持NTFS的读写，但是有个叫“NTFS-3G”的常用软件可以实现NTFS的读写，
-exFAT，和NTFS一样，Linux并不支持，有个叫“exfat-utils”的安装后就能读写exFAT，
-
-这里都是理论，但是要看，要懂，
-到这里，同学们应该要懂，32位，64位，MBR，GPT，BIOS引导，EFI引导，这些词的含义，能判断出自己电脑符合哪些词，
-还有知道下文件系统大概是什么，以及常见的文件系统，
-这也就够的，
 

@@ -1,8 +1,5 @@
-http://baike.baidu.com/view/1132.htm 度娘百科-虚拟机
-http://baike.baidu.com/view/1047853.htm 度娘百科-VirtualBox
-http://baike.baidu.com/view/301083.htm 度娘百科-VMware
-http://www.vmware.com/cn VMware官网
-https://www.virtualbox.org/ VirtualBox官网
-http://pan.baidu.com/s/1gdhjtj9 百度网盘-VMware
-http://baike.baidu.com/view/552582.htm 度娘百科-LiveCD
-http://baike.baidu.com/view/3326.htm 度娘百科-windowsPE
+http://www.diskgenius.cn/download.php DiskGenius下载
+http://baike.baidu.com/view/266589.htm 度娘百科-文件系统
+http://baike.baidu.com/view/45233.htm 度娘百科-FAT32
+http://baike.baidu.com/view/381.htm 度娘百科-NTFS
+http://baike.baidu.com/view/1128111.htm 度娘百科-exFAT
