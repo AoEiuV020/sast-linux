@@ -1,1 +1,5 @@
 http://www.diskgenius.cn/download.php DiskGenius下载
+http://baike.baidu.com/view/266589.htm 度娘百科-文件系统
+http://baike.baidu.com/view/45233.htm 度娘百科-FAT32
+http://baike.baidu.com/view/381.htm 度娘百科-NTFS
+http://baike.baidu.com/view/1128111.htm 度娘百科-exFAT
