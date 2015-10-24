@@ -9,18 +9,18 @@ img:img/putty2.png
 远程控制首先要有个服务器去控制，
 
 这里贡献上我买的阿里云vps，
-地址是 ali.aoeiuv020.top
+地址是 ali.sastlinux.cn
 帐号密码都是student
 
 还有百度云的vps，虽然10月底就过期了，
-地址是 baidu.aoeiuv020.top
-帐号密码都是root
+地址是 baidu.sastlinux.cn
+帐号密码都是student
 
 还有几个奇怪的外国vps，虽然未必能用的，
 地址分别是
-123.aoeiuv020.top
-123a.aoeiuv020.top
-123b.aoeiuv020.top
+123.sastlinux.cn
+123a.sastlinux.cn
+123b.sastlinux.cn
 所有帐号密码都是av
 
 我也没怎么用，所以同学可以随便搞，搞坏了我重装就是，
@@ -43,7 +43,6 @@ img:img/man_ls.png
 
 建议可以自己买个vps，linux环境的，
 比如阿里云的有学生优惠，9.9元/月，
-还有推荐码9NLGJA，据说可以9折，
 只要等学校要求在学信网注册后，就可以买了，
 其他都好贵，
 

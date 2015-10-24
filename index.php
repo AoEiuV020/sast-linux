@@ -1,4 +1,37 @@
 <?php
+if($_SERVER['SERVER_NAME']==="linux.aoeiuv020.top")
+{
+	$url='http://'."sastlinux.cn".':'.$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"]; 
+	$html1=<<<EOF
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <meta http-equiv=Refresh content="10; url=
+EOF;
+	$html2=<<<EOF
+">
+<style type=text/css>
+* {margin:0; padding:0; font-family: "Microsoft YaHei" ! important;}body{background:#fff;margin:200px auto;font:14px/150% Verdana,Georgia,Sans-Serif;color:#000;text-align:center}A:link{color:#2c4c78;TEXT-DECORATION:none}A:visited{color:#2c4c78;TEXT-DECORATION:none}A:hover{color:#2c4c78;TEXT-DECORATION:none}A:active{color:#2c4c78;TEXT-DECORATION:none}H1{PADDING-RIGHT:4px;PADDING-LEFT:4px;FONT-SIZE:18px;line-height:34px;color:#333333;BACKGROUND:#fff;PADDING-BOTTOM:4px;MARGIN:0;PADDING-TOP:4px;BORDER-BOTTOM:#ccc 0px solid}div{ACKGROUND:#fff;MARGIN:0 auto;WIDTH:90%}P{color:#333333;PADDING-RIGHT:15px;PADDING-LEFT:15px;PADDING-BOTTOM:15px;MARGIN:0;PADDING-TOP:15px}
+</style>
+</head>
+<body><div><h1>本站已经更换新域名，10秒过后系统将会自动跳转到新域名，<br>请得到新域名过后下次改用新域名上本站，此旧域名将要作废。</h1><p>如果无法自动跳转，请点击 <a href="
+EOF;
+	$html3=<<<EOF
+"><u>这里</u></a>。</p></div></body>
+</html>
+EOF;
+
+echo $html1.$url.$html2.$url.$html3;
+}
+else
+{
 $doc = new DOMDocument('1.0','utf-8');
 $doc->formatOutput=true;
 //$doc->encodeing='utf-8';
@@ -155,5 +188,6 @@ $body->appendChild($p);
 
 echo "<!doctype html>\n";
 echo $doc->saveHTML();
+}
 ?>
 
