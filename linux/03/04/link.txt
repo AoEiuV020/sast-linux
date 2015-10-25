@@ -1,0 +1,1 @@
+http://vbird.dic.ksu.edu.tw/linux_basic/0320bash_2.php 鸟哥讲的变量

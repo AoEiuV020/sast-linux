@@ -1,0 +1,34 @@
+变量
+
+这变量是门很深的学问，
+但是这里不讲Shell编程，
+所以变量只讲些最基本的能用就行，
+首先是定义变量的格式，
+要知道，Shell里的这些变量，存的都是字符串，
+var="Hello..."
+这就定义了一个变量var，保存的是字符串"Hello..."
+调用的时候$加上变量名就可以了，
+最好把变量名用{}包起来，
+img:img/var.png
+
+内部命令set
+set可以看到所有定义了的变量，还有函数，
+因为太长了，所以可以用less命令看，
+set|less
+这样set的输出就可以用上下移动，空格翻页，q退出，
+img:img/set_less.png
+或者用grep找到自己要找的行，
+set|grep var
+img:img/set_grep.png
+
+内部命令unset
+已经定义的变量用unset取消定义，
+img:img/unset.png
+
+内部命令export
+有的变量，需要能继承到子进程的，
+就是说，在Shell里执行bash命令，开启一个新的Shell，原来的Shell定义的变量会失效，
+要想不失效，就在定义变量的语句前加个export，
+export var="sastlinux"
+这样定义的变量叫做“环境变量”，用export可以看定义了哪些环境变量，
+img:img/export.png

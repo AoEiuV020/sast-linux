@@ -1,0 +1,22 @@
+HotKey
+快捷键，又叫热键，HotKey，
+
+[Tab]
+简单地说，具有命令补全和文件补齐的功能，再简单地说就是补全;
+img:img/lstab.png
+img:img/tab.png
+如果有多个选择，对于bash，按一下[Tab]就不会显示，所以这个时候要按两下[Tab]，就会
+出现所有选择,
+输入一些长文件名就可以只输入一部分然后敲Tab，
+
+[Ctrl]-c
+简单地说，就是终止当前命令的运行
+img:img/ctrl-c.png
+这个效果是强行终止，可能导致程序出问题，
+
+[Ctrl]-d
+键盘输入结束(End Of File, EOF)，
+img:img/ctrl-d.png
+有些程序要到输入结束才会退出，比如上图的cat，
+这时就是用ctrl-d表示输入结束，
+
