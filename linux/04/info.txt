@@ -108,3 +108,26 @@ mv [options] source1 source2 source3 .... directory
 -i  ：若目标文件 (destination) 已经存在时，就会询问是否覆盖
 -u  ：若目标文件已经存在，且source比较新，才会升级(update)
 img:img/mv.png
+
+
+
+basename 路径:提取最后的档名
+dirname 路径:提取前面的目录名
+这两个命令主要用于之后的shell script的判断
+img:img/basedir.png
+
+
+
+mkdir(make directory)
+mkdir [-mp] 目录名称
+选项与参数：
+-m ：直接配置文件的权限
+-p ：帮助你直接将所需要的目录(包含上一级目录)递回创建起来
+img:img/mkdir.png
+
+
+
+rmdir [-p] 目录名称
+选项与参数：
+-p ：连同上一级的空的目录删除
+img:img/rmdir.png
