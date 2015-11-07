@@ -1,2 +1,0 @@
-http://vbird.dic.ksu.edu.tw/linux_basic/0210filepermission_2.php#filepermission_dir 鸟哥讲权限
-http://www.jb51.net/LINUXjishu/81436.html 三个高级权限
