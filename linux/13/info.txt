@@ -1,2 +1,31 @@
 强大的检索命令find
 
+可以搜索指定目录下的满足各种条件的文件，
+并引用其他命令分别处理这些文件，
+
+直接find，默认查找当前目录，
+img:img/find1.png
+后面跟上目录，可以查找指定目录，
+img:img/find2.png
+
+然后是些用来筛选的选项参数，
+-name
+对文件名进行筛选，支持通配符*,
+img:img/find_name.png
+
+-regex 也是对文件名筛选，使用正则，
+-perm 对权限筛选，
+-mtime 对时间筛选，
+-uid -gid 对文件所有者和所有组筛选，
+-inum 对inode筛选，
+-type 对文件类型筛选，
+这些筛选的选项，我觉得还是到需要有时候再看看会比较好，
+毕竟都是用着才会熟，而这些，我都没用过，，，
+
+最重要的是，对这些文件执行命令，
+-exec
+find /etc -name "*.conf" -exec grep -H "DocumentRoot" {} \; 2>/dev/null
+从-exec到\;为止表示一条命令，可以多条，
+一对花括号代表每个找到的文件，
+img:img/find_exec.png
+
