@@ -101,3 +101,22 @@ eli:http://www.nuptsast.com/blog/linux
 交作业
 个人不喜欢作业什么的，命令要熟，那些自然能写出来，
 
+
+上节课讲的权限，有个umask命令忘了，这节补上，
+lin:linux/07
+umask在最下面
+
+然后继续Shell的一些手段，
+lin:linux/10
+管道和重定向
+lin:linux/11
+逻辑运算
+
+然后是一些强大常用的命令，
+lin:linux/14
+ln
+lin:linux/15
+find
+lin:linux/16
+tar
+
