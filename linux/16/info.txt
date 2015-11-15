@@ -84,5 +84,5 @@ img:img/tarz.png
 用打包并压缩那个文件，然后不解压缩就直接用tar命令解包，失败，
 把错误信息写入文件err，
 
-
+img:img/homework.png
 
