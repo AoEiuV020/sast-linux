@@ -1,0 +1,14 @@
+dd
+
+dd if=file of=newfile
+img:img/dd.png
+
+dd是很强大的东西，
+但它做的是很简单的工作，
+就是读+写，
+
+从if=后面的文件读，
+写入of=后面的文件，
+
+由于Linux下，一切皆文件，
+这才强大，
