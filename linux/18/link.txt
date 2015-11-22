@@ -1,2 +1,4 @@
 https://filezilla-project.org/ filezilla官网
 http://jaist.dl.sourceforge.net/project/filezilla/FileZilla_Client/3.14.1/FileZilla_3.14.1_win64-setup.exe 64位windows版filezilla下载
+http://jingyan.baidu.com/article/b2c186c8ee1116c46ef6ffc8.html ftp命令
+http://blog.chinaunix.net/uid-20615025-id-29835.html  lftp命令-别人的总结
