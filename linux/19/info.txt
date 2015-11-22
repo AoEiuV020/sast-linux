@@ -1,5 +1,28 @@
 vim
 
 还是讲点吧，编辑器之神，
+img:img/start.png
+vim不是真的像vi那么简单，
+配置后的vim可以非常强大，
+而自己配置的vim可以非常顺手，
 
+lin:http://rc.sastlinux.cn/linux/.vimrc
+我的.vimrc
+
+vimtutor
+这是个命令，其实是vim的官方教程，
+而且这个教程本身可以用vim的操作，
+img:img/tutor.png
+
+------------------
+首先，vim主要是在主键盘操作，
+也就是尽量不用方向键和小键盘那些，
+img:img/keyboard.png
+
+然后其实vim命令是很复杂的，
+img:img/vim.png
+
+但不需要都掌握，
+一些基本的用顺手了，
+其他的能学多少是多少，
 
