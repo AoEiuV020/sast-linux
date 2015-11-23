@@ -1,0 +1,46 @@
+命令(进程管理)
+
+1.&:将命令扔到后台运行
+img:img/&_1.png
+出来的[1]是jobnumber,8005是PID,是该进程的ID
+但该命令运行完后,会在屏幕显示Done
+
+虽然命令是在后台运行的,但是它输出的东西依然会显示在屏幕上,然而并不会影响你的输入
+img:img/&_2.png
+比如上图的ls还是照常输出了
+如果被这样满屏的东西亮瞎了狗眼,该怎么办呢？
+上节课的重定向都白学了吗？
+
+2.[ctrl]+z:将目前的工作丢到后台并且暂停
+img:img/^z.png
+
+3.jobs:观察目前的后台工作状态
+jobs [-lrs]
+选项与参数：
+-l  ：除了列出 job number 与命令串之外，同时列出 PID 的号码；
+-r  ：仅列出正在背景 run 的工作；
+-s  ：仅列出正在背景当中暂停 (stop) 的工作
+img:img/jobs.png
+
+4.fg:将后台工作拿到当前来处理
+fg %jobnumber
+选项与参数：
+%jobnumber:其实%有无都行
+img:img/fg.png
+
+5.bg:在后台的进程状态变成运行中
+bg %jobnumber
+选项与参数:
+%jobnumber:同上
+
+6.kill:管理背景当中的工作
+kill -signal %jobnumber
+kill -l
+选项与参数：
+-l  ：列出目前kill能够使用的讯号(signal)
+signal ：讯号
+    -1 ：重新读取一次参数的配置档
+    -2 ：代表与由键盘输入 [ctrl]-c 同样的动作
+    -9 ：立刻强制删除一个进程
+    -15：以正常的程序方式终止一项工作进程
+img:img/kill.png
