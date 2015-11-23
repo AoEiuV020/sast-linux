@@ -1,0 +1,2 @@
+http://vbird.dic.ksu.edu.tw/linux_basic/0310vi_2.php 鸟哥讲vi
+http://www.cnblogs.com/ma6174/archive/2011/12/10/2283393.html ma6174这个人配置的vim

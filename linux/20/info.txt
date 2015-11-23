@@ -38,5 +38,3 @@ img:img/Sc.png
 img:img/link.png
 
 
-
-
