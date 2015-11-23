@@ -38,3 +38,7 @@ img:img/Sc.png
 img:img/link.png
 
 
+img:img/gdb1.png
+img:img/gdb2.png
+img:img/gdb3.png
+
