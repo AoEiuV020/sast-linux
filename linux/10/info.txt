@@ -28,7 +28,7 @@ Linux上的c语言，打开的文件都可以存为int类型的变量，
 先说3个特殊的文件描述符，012，默认是都指向控制台tty，简单的说就是从屏幕上输入输出，
 0是标准输入，c语言的stdin，就是打开的这个，c语言的scanf和c++的cin就是从这里读，
 1是标准输出，对应c语言的stdout，c语言的printf和c++的cout就是写入这里，
-2是错误输出，就是专门用来输出错误消息的，对应c语言的stdout,perror和c++的cerr,clog，
+2是错误输出，就是专门用来输出错误消息的，对应c语言的stderr,perror和c++的cerr,clog，
 
 有没有注意到，这里1和2都是输出，为何要搞两个呢，主要就和重定向有关，
 grep "" * 1>/tmp/grep1 2>/tmp/grep2
