@@ -5,15 +5,26 @@ img:img/start.png
 vim不是真的像vi那么简单，
 配置后的vim可以非常强大，
 而自己配置的vim可以非常顺手，
-
-lin:http://rc.sastlinux.cn/linux/.vimrc
+而且我配置的vimrc是linux和windows通用的，
+eli:http://rc.sastlinux.cn/linux/.vimrc
 我的.vimrc
+先说说怎么用，浏览器直接打开可能看到乱码，
+看看自己家目录下有没有.vimrc，
+把我的.vimrc写进去就OK了，
+img:img/wgetvimrc.png
+如上图，wget可以用来下载东西，
+在家目录下载这个.vimrc就可以了，
 
 vimtutor
 这是个命令，其实是vim的官方教程，
 而且这个教程本身可以用vim的操作，
 跟着教程走一遍就基本可以简单使用vim了，
 img:img/tutor.png
+其实还有中文的vimtutor,
+LANG=zh_CN.UTF-8 vimtutor
+这是临时把代表语言的环境变量改成中文然后vimtutor,
+img:img/zhtutor.png
+
 
 ------------------
 首先，vim主要是在主键盘操作，
@@ -65,8 +76,10 @@ w,b,光标跳到下/上个单词，还有个e也是跳到行尾，
 $,^,光标跳到行尾/行首，还有个0也是跳到行首，
 C-u/C-d,上/下滚动半页，
 C-b/C-f,上/下滚动一页，
+C-e/C-y,上/下滚动一行，
 gg,瞬移到开头行，
 G,瞬移到最后行，
+数字G,瞬移到指定行，8G就是跳到第8行，
 zz,瞬移到屏幕中间，
 
 然后是删除，
@@ -154,8 +167,19 @@ y,这个y是复制，后面跟上光标移动的命令，
 敲两下y是复制当前行，
 要配合下面说的选择才能比较准确的选择要复制的内容，
 p,P,粘贴，分别是在后面和前面粘贴，
+img:img/copy.png
 ",双引号加个一个键表示选择一个寄存器，后面跟上剪切复制粘贴命令，
+比如这样，在下图里是自己打的<?php这行，依次敲下，
+"py2j
+就可以把那三行复制到p寄存器里，下次需要时依次敲下，
+"pp
+就可以把这三行粘贴出来，
+img:img/regp.png
 
+
+u,撤销，
+ctrl-r是取消撤销，
+img:img/undo.png
 
 +++选择模式+++
 上面的一些操作，比如替换，删除之类的，可以只针对一部分，
@@ -163,33 +187,21 @@ p,P,粘贴，分别是在后面和前面粘贴，
 如果执行的是冒号:开头的命令，会自动出现:'<,'>表示后面命令只对选择的这部分，
 img:img/v.png
 还有shift-v是整行选择，
+img:img/vline.png
 ctrl-v是矩形的选择，
+img:img/vblock.png
+这些选择都是结合别的命令使用的，可以随便试试，
 
 ---------------------
 剩下的时间主要自己操作一番，看看vimtutor,
 如果能喜欢上vim，就花个几天，几周来学习一下vim的命令，
+
 还有vim的脚本语言，作为一个脚本语言是很强大的，
-我只简单学习下用来写了几个函数自动输入c/c++常用的几行，
-:call C()
-#include <stdio.h>
-int main(int argc, char **argv)
-{
-	
-	return 0;
-}
-:call Cpp()
-#include <iostream>
-using namespace std;
-int main(int argc, char **argv)
-{
-	
-	return 0;
-}
 
 还有可以用各种map，
 把一些组合键和F键设置成编译运行当前写的代码，
 虽然我并不喜欢这样，
 
 还有些其他常用的设置，可以看看我的.vimrc，
-还有页面下方的链接，别人配置的vim，喜欢用vim的话可以看看，
+还有页面下方的链接，别人配置的vim，可以试试，
 
