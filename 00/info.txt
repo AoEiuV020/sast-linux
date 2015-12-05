@@ -181,3 +181,9 @@ vim
 lin:linux/20
 gcc
 
+这节课就给vim了，
+lin:linux/19
+vim
+
+花一节课的时间熟悉下vim，
+如果觉得好用，可以花更多的时间学习这个编辑器，
